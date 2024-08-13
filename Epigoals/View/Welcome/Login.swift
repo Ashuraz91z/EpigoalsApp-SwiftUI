@@ -1,29 +1,40 @@
-//
-//  Login.swift
-//  Epigoals
-//
-//  Created by Lucas Fernandes on 11/08/2024.
-//
-
 import SwiftUI
 
 struct LoginView: View {
     @State var email: String
     @State var password: String
+    
     var body: some View {
-        VStack {
+        VStack(spacing: 5) {
             Text("Se connecter")
                 .font(.title)
                 .foregroundStyle(Color("Text"))
-            InputView(text: $email,
-                      placeholder: "Entrez votre email ",
-                      title: "Email",
-                      secureField: false)
+                .padding(.bottom, 30)
+            
+            InputView(
+                text: $email,
+                placeholder: "Entrez votre email ",
+                title: "Email",
+                secureField: false
+            )
+            
             InputView(
                 text: $password,
                 placeholder: "Entrez votre mot de passe",
                 title: "Mot de passe",
-                secureField: true)
+                secureField: true
+            )
+            
+            HStack {
+                Spacer()
+                Button(action:  {
+                    print("Mot de passe oublié")
+                }) {
+                    Text("Mot de passe oublié ?")
+                        .foregroundColor(Color.blue)
+                }
+            }
+            .padding(.bottom, 20)
             
             Button(action:  {
                 print("Email : ", email)
@@ -34,9 +45,11 @@ struct LoginView: View {
                     .padding()
                     .background(Color("Accent"))
                     .cornerRadius(8)
+                    
             }
-
+            .padding(.top, 10)
         }
+        .padding()
     }
 }
 
