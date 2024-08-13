@@ -3,7 +3,7 @@
 //  Epigoals
 //
 //  Created by Lucas Fernandes on 09/08/2024.
-//
+
 
 import SwiftUI
 
@@ -11,7 +11,8 @@ import SwiftUI
 struct EpigoalsApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
+                .background(Color("Background"))
         }
     }
 }
